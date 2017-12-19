@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import LeanCloud
 
 class ViewController: UIViewController {
-
+    let post = LCObject(className: "TestObject")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        post.set("words", value: "Hello World!")
+        post.save()
+        print("成功")
         // Do any additional setup after loading the view, typically from a nib.
     }
 

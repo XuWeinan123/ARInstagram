@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVOSCloud
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        AVOSCloud.setApplicationId("QvjVufzK2Q3EGAUKEUwKa3HM-gzGzoHsz", clientKey: "fbNdi3mj1ABNjIxcxWCFAhtT")
+        login()
+        window?.backgroundColor = .white
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -40,7 +44,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    func login(){
+        //获取UserDefaults中储存的Key为username的值
+        let username:String? = UserDefaults.standard.string(forKey: "username")
+        if username != nil{
+            
+            print("已有默认用户")
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let myTabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+            window?.rootViewController = myTabBar
+            /*
+            
+            AVUser.current()?.follow("59fb3360ee920a004592f5af", andCallback: {(success:Bool,error:Error?) in
+                if success{
+                    print("\(username!)成功")
+                }else{
+                    print("\(username!)失败")
+                }
+            })
+            AVUser.current()?.follow("59fb33faee920a004592f985", andCallback: {(success:Bool,error:Error?) in
+                if success{
+                    print("\(username!)成功")
+                }else{
+                    print("\(username!)失败")
+                }
+            })*/
+        }
+    }
+    func offline(){
+        guard !UserDefaults.standard.bool(forKey: "online") else {
+            return
+        }
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let ARVC = storyboard.instantiateViewController(withIdentifier: "ARImage")
+        window?.rootViewController = ARVC
+    }
 
 }
 

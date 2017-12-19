@@ -1,0 +1,40 @@
+PODS:
+  - AVOSCloud (7.3.2)
+  - AVOSCloudCrashReporting (7.3.2):
+    - AVOSCloud (= 7.3.2)
+    - AVOSCloudCrashReporting/_ARC (= 7.3.2)
+    - AVOSCloudCrashReporting/_NOARC (= 7.3.2)
+  - AVOSCloudCrashReporting/_ARC (7.3.2):
+    - AVOSCloud (= 7.3.2)
+    - AVOSCloudCrashReporting/_NOARC (= 7.3.2)
+  - AVOSCloudCrashReporting/_NOARC (7.3.2):
+    - AVOSCloud (= 7.3.2)
+  - AVOSCloudIM (7.3.2):
+    - AVOSCloud (= 7.3.2)
+    - AVOSCloudIM/_ARC (= 7.3.2)
+    - AVOSCloudIM/_NOARC (= 7.3.2)
+  - AVOSCloudIM/_ARC (7.3.2):
+    - AVOSCloud (= 7.3.2)
+    - AVOSCloudIM/_NOARC (= 7.3.2)
+  - AVOSCloudIM/_NOARC (7.3.2):
+    - AVOSCloud (= 7.3.2)
+  - EFColorPicker (1.0.0)
+  - SVProgressHUD (2.2.2)
+
+DEPENDENCIES:
+  - AVOSCloud
+  - AVOSCloudCrashReporting
+  - AVOSCloudIM
+  - EFColorPicker
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  AVOSCloud: 8a18125408bac1fc73c19ceb897db4ec4e0e6044
+  AVOSCloudCrashReporting: 12f4677508eac413f6c80f53bc7172b4210de1a8
+  AVOSCloudIM: dc24560259042bb84dd318a31b71ca858fccb6fe
+  EFColorPicker: b751df82a8aa79b0123750d569d0ed63cb2ccd91
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+
+PODFILE CHECKSUM: 30b0d50c10e4e53cc122e64beef7e0bdb406602d
+
+COCOAPODS: 1.3.1
