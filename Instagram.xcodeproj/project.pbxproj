@@ -19,6 +19,7 @@
 		E1118C051FAAAEA10016AA23 /* pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1118C041FAAAEA00016AA23 /* pacifico.ttf */; };
 		E1118C0A1FAAC0F10016AA23 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1118C091FAAC0F10016AA23 /* HomeVC.swift */; };
 		E1118C0E1FAAC1B40016AA23 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1118C0D1FAAC1B40016AA23 /* HeaderView.swift */; };
+		E11B75CD1FEA34CE007975B1 /* likeTapAni1.json in Resources */ = {isa = PBXBuildFile; fileRef = E11B75CC1FEA34CE007975B1 /* likeTapAni1.json */; };
 		E13369701FD10293008A555D /* ARVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E133696F1FD10293008A555D /* ARVC.swift */; };
 		E133697C1FD10395008A555D /* CreatObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13369711FD10394008A555D /* CreatObjectInteraction.swift */; };
 		E133697D1FD10395008A555D /* MyARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13369721FD10394008A555D /* MyARView.swift */; };
@@ -49,6 +50,7 @@
 		E1EA3DB51FAE06EA00C65976 /* UploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA3DB41FAE06EA00C65976 /* UploadVC.swift */; };
 		E1EA3DB71FAEBB2200C65976 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA3DB61FAEBB2200C65976 /* PostVC.swift */; };
 		E1EA3DBB1FAEBBA100C65976 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA3DBA1FAEBBA100C65976 /* PostCell.swift */; };
+		E1EBF9AD1FEBA84B009F63AD /* likeTapAni2.json in Resources */ = {isa = PBXBuildFile; fileRef = E1EBF9AC1FEBA84A009F63AD /* likeTapAni2.json */; };
 		E1EC8C8D1FAAC669005660F5 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EC8C8C1FAAC669005660F5 /* PictureCell.swift */; };
 		E1EF86571FAC268A0056F43F /* FollowersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EF86561FAC268A0056F43F /* FollowersVC.swift */; };
 		E1EF86591FAC26AA0056F43F /* FollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EF86581FAC26AA0056F43F /* FollowersCell.swift */; };
@@ -76,6 +78,7 @@
 		E1118C041FAAAEA00016AA23 /* pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pacifico.ttf; sourceTree = "<group>"; };
 		E1118C091FAAC0F10016AA23 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E1118C0D1FAAC1B40016AA23 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E11B75CC1FEA34CE007975B1 /* likeTapAni1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = likeTapAni1.json; path = ../../../Desktop/likeTapAni1.json; sourceTree = "<group>"; };
 		E133696F1FD10293008A555D /* ARVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARVC.swift; sourceTree = "<group>"; };
 		E13369711FD10394008A555D /* CreatObjectInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatObjectInteraction.swift; sourceTree = "<group>"; };
 		E13369721FD10394008A555D /* MyARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyARView.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 		E1EA3DB41FAE06EA00C65976 /* UploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVC.swift; sourceTree = "<group>"; };
 		E1EA3DB61FAEBB2200C65976 /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 		E1EA3DBA1FAEBBA100C65976 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		E1EBF9AC1FEBA84A009F63AD /* likeTapAni2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = likeTapAni2.json; path = ../../../Desktop/likeTapAni2.json; sourceTree = "<group>"; };
 		E1EC8C8C1FAAC669005660F5 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		E1EF86561FAC268A0056F43F /* FollowersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersVC.swift; sourceTree = "<group>"; };
 		E1EF86581FAC26AA0056F43F /* FollowersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCell.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 				E1F024121FB12C4600171DA1 /* KILabel.h */,
 				E1F024111FB12C4600171DA1 /* KILabel.m */,
 				E133698C1FD1042A008A555D /* 李旭科钢笔行书.ttf */,
+				E1EBF9AC1FEBA84A009F63AD /* likeTapAni2.json */,
+				E11B75CC1FEA34CE007975B1 /* likeTapAni1.json */,
 				E133698D1FD10436008A555D /* 求福楷体.ttf */,
 				E133698E1FD10445008A555D /* 中易隶书.ttf */,
 				E105A20E1FA3191B0064F0FF /* Instagram */,
@@ -326,9 +332,11 @@
 				E13369901FD10E8A008A555D /* 求福楷体.ttf in Resources */,
 				E13369911FD10E8A008A555D /* 中易隶书.ttf in Resources */,
 				E105A21A1FA3191C0064F0FF /* LaunchScreen.storyboard in Resources */,
+				E1EBF9AD1FEBA84B009F63AD /* likeTapAni2.json in Resources */,
 				E105A2171FA3191C0064F0FF /* Assets.xcassets in Resources */,
 				E1118C051FAAAEA10016AA23 /* pacifico.ttf in Resources */,
 				E105A2151FA3191C0064F0FF /* Main.storyboard in Resources */,
+				E11B75CD1FEA34CE007975B1 /* likeTapAni1.json in Resources */,
 				E1C3AAD21FDE63E8002405F3 /* UploadView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +371,7 @@
 				"${BUILT_PRODUCTS_DIR}/AVOSCloudIM/AVOSCloudIM.framework",
 				"${BUILT_PRODUCTS_DIR}/EFColorPicker/EFColorPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -371,6 +380,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AVOSCloudIM.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFColorPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

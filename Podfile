@@ -9,6 +9,7 @@ target 'Instagram' do
   pod 'AVOSCloudCrashReporting' # 错误报告模块
   pod 'EFColorPicker'
   pod 'SVProgressHUD'
+  pod 'lottie-ios'
   # Pods for Instagram
 
 end

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVOSCloud
+import SVProgressHUD
 var postuuid = [String]()
 class PostVC: UITableViewController {
 
@@ -55,7 +56,7 @@ class PostVC: UITableViewController {
                 }
                 self.tableView.reloadData()
             }else{
-                print("出现错误！\(error?.localizedDescription)")
+                print("出现错误！\(String(describing: error?.localizedDescription))")
             }
             
             //设置接受到likeClick消息后的操作
@@ -86,7 +87,7 @@ class PostVC: UITableViewController {
             self.puuidArray.remove(at: i.row)
             //1.2删除云端的记录
             let postQuery = AVQuery(className: "Posts")
-            postQuery.whereKey("puuid", equalTo: cell.puuidLbl.text)
+            postQuery.whereKey("puuid", equalTo: cell.puuidLbl.text!)
             postQuery.findObjectsInBackground { (objects:[Any]?, error:Error?) in
                 if error == nil {
                     for object in objects! {
@@ -98,6 +99,7 @@ class PostVC: UITableViewController {
                                 self.navigationController?.popViewController(animated: true)
                             }else{
                                 print(error?.localizedDescription)
+                                self.alert(error: "删除错误", message: "请检查网络之后重试")
                             }
                         })
                     }
@@ -107,7 +109,7 @@ class PostVC: UITableViewController {
             }
             //1.3删除帖子的like记录
             let likeQuery = AVQuery(className: "Likes")
-            likeQuery.whereKey("to", equalTo: cell.puuidLbl.text)
+            likeQuery.whereKey("to", equalTo: cell.puuidLbl.text!)
             likeQuery.findObjectsInBackground { (objects:[Any]?, error:Error?) in
                 if error == nil {
                     for object in objects!{
@@ -117,7 +119,7 @@ class PostVC: UITableViewController {
             }
             //1.4删除帖子相关的评论
             let commentQuery = AVQuery(className: "Comments")
-            commentQuery.whereKey("to", equalTo: cell.puuidLbl.text)
+            commentQuery.whereKey("to", equalTo: cell.puuidLbl.text!)
             commentQuery.findObjectsInBackground { (objects:[Any]?, error:Error?) in
                 if error == nil {
                     for object in objects! {
@@ -127,7 +129,7 @@ class PostVC: UITableViewController {
             }
             //1.5删除帖子相关的Hashtag
             let hashtagQuery = AVQuery(className: "Hashtags")
-            hashtagQuery.whereKey("to", equalTo: cell.puuidLbl.text)
+            hashtagQuery.whereKey("to", equalTo: cell.puuidLbl.text!)
             hashtagQuery.findObjectsInBackground { (objects:[Any]?, error:Error?) in
                 if error == nil{
                     for object in objects! {
@@ -156,16 +158,21 @@ class PostVC: UITableViewController {
         }
         //3.取消操作
         let cancel = UIAlertAction(title:"取消",style:.cancel,handler:nil)
-        
+        //3.5保存到相册操作
+        let save = UIAlertAction(title: "保存图片", style: .default) { (UIAlertAction) in
+            UIImageWriteToSavedPhotosAlbum(cell.picImg.image!, self, #selector(self.didSaveImageToAlbum(image:didFinishSavingWithError:contextInfo:)), nil)
+        }
         //4.创建菜单控制器
         let menu = UIAlertController(title: "菜单选项", message: nil, preferredStyle: .actionSheet)
         
         if cell.usernameBtn.titleLabel?.text == AVUser.current()?.username{
+            menu.addAction(save)
             menu.addAction(delete)
-            //menu.addAction(cancel)
+            menu.addAction(cancel)
         }else{
+            menu.addAction(save)
             menu.addAction(complain)
-            //menu.addAction(cancel)
+            menu.addAction(cancel)
         }
         
         if(UIDevice.current.model == "iPad"){
@@ -173,6 +180,17 @@ class PostVC: UITableViewController {
         }
 
          self.present(menu, animated: true, completion: nil)
+    }
+    //完成存储方法
+    @objc func didSaveImageToAlbum(image:UIImage,didFinishSavingWithError error:NSError?,contextInfo:AnyObject) {
+        SVProgressHUD.setMinimumDismissTimeInterval(1.2)
+        if error != nil {
+            SVProgressHUD.showError(withStatus: "保存失败")
+            SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
+        } else {
+            SVProgressHUD.showSuccess(withStatus: "保存成功")
+            SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
+        }
     }
     //alert方法
     func alert(error:String,message:String){
@@ -204,7 +222,7 @@ class PostVC: UITableViewController {
             self.navigationController?.pushViewController(home, animated: true)
         }else{
             let query = AVUser.query()
-            query.whereKey("username", equalTo: cell.usernameBtn.titleLabel?.text)
+            query.whereKey("username", equalTo: cell.usernameBtn.titleLabel?.text!)
             query.findObjectsInBackground({ (objects:[Any]?, error:Error?) in
                 if let object = objects?.last{
                     guestArray.append(object as! AVUser)
@@ -287,7 +305,7 @@ class PostVC: UITableViewController {
         //根据用户是否喜爱决定likeBtn的样式
         let didLike = AVQuery(className: "Likes")
         didLike.whereKey("by", equalTo: AVUser.current()?.username)
-        didLike.whereKey("to", equalTo: cell.puuidLbl.text)
+        didLike.whereKey("to", equalTo: cell.puuidLbl.text!)
         didLike.countObjectsInBackground { (count:Int, error:Error?) in
             if count == 0{
                 cell.likeBtn.setTitle("unlike", for: .normal)
@@ -299,7 +317,7 @@ class PostVC: UITableViewController {
         }
         //计算帖子的喜爱总数
         let countLikes = AVQuery(className: "Likes")
-        countLikes.whereKey("to", equalTo: cell.puuidLbl.text)
+        countLikes.whereKey("to", equalTo: cell.puuidLbl.text!)
         countLikes.countObjectsInBackground { (count:Int, error:Error?) in
             cell.likeLbl.text = "\(count)"
         }

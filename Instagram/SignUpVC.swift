@@ -24,13 +24,13 @@ class SignUpVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
     var scrollViewHeight:CGFloat = 0
     var keyboard:CGRect = CGRect()
     
-    @IBOutlet weak var 😎必填: UILabel!
-    @IBOutlet weak var 😂😱🤩: UILabel!
     @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var signUpBtnWidth: NSLayoutConstraint!
+    @IBOutlet weak var scrollViewBottom: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         //UI元素布局
         let viewWidth = self.view.frame.width
         cancelBtn.frame = CGRect(x: 32, y: 72, width: 32, height: 32)
@@ -49,6 +49,9 @@ class SignUpVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         scrollView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         scrollView.contentSize.height = self.view.frame.height
         scrollViewHeight = self.view.frame.height
+ */
+        signUpBtnWidth.constant = self.view.frame.width-64
+        NotificationCenter.default.addObserver(self, selector: #selector(receiverNotification), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         //检测键盘出现或消失的状态
         NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: Notification.Name.UIKeyboardWillHide, object: nil)
@@ -65,7 +68,10 @@ class SignUpVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         avaImg.isUserInteractionEnabled = true
         avaImg.addGestureRecognizer(imgTap)
         // Do any additional setup after loading the view.
-        
+    }
+    @objc func receiverNotification(){
+        signUpBtnWidth.constant = self.view.frame.width-64
+        print("self.view.frame.width:\(self.view.frame.width)")
     }
     @IBAction func signUpBtn_clicked(_ sender: Any) {
         print("注册按钮被按下！")
@@ -137,13 +143,11 @@ class SignUpVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
     @objc func showKeyboard(notification:Notification){
         let rect = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         keyboard = rect.cgRectValue
-        UIView.animate(withDuration: 0.4, animations: {self.scrollView.frame.size.height = self.scrollViewHeight - self.keyboard.size.height})
+        scrollViewBottom.constant = -keyboard.height
     }
     @objc func hideKeyboard(notification:Notification){
         //print(notification)
-        UIView.animate(withDuration: 0.4){
-            self.scrollView.frame.size.height = self.view.frame.height
-        }
+        scrollViewBottom.constant = 0
     }
     @objc func hideKeyboardTap(notification:Notification){
         //self.view.endEditing(true)

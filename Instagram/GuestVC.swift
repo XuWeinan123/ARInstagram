@@ -241,7 +241,7 @@ class GuestVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
         return header
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: self.view.frame.width/3, height: self.view.frame.width/3)
+        let size = CGSize(width: 278, height: 278)
         return size
     }
     @objc func postsTap(_ recognizer:UITapGestureRecognizer){

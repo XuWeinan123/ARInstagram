@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //获取UserDefaults中储存的Key为username的值
         let username:String? = UserDefaults.standard.string(forKey: "username")
         if username != nil{
-            
+            UserDefaults.standard.set(true, forKey: "online")
             print("已有默认用户")
             let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let myTabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController

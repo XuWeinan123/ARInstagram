@@ -21,6 +21,7 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        /*
         //UI自适应部分
         print("屏幕宽度是\(self.view.frame.width)，屏幕高度是\(self.view.frame.height)")
         label.frame = CGRect(x: 32, y: 72, width: self.view.frame.width-64, height: 50)
@@ -32,7 +33,7 @@ class SignInVC: UIViewController {
         signInBtn.frame = CGRect(x: 32, y: 306, width: self.view.frame.width-64, height: 40)
         signUpBtn.frame = CGRect(x:22,y:357,width:92,height:38)
         offlineBtn.frame = CGRect(x: self.view.frame.width/2-48, y: self.view.frame.height-40-30, width: 96, height: 30)
-        
+        */
         //label字体设置
         for supportTheFont: String in UIFont.familyNames {
             print("字体\(supportTheFont)")

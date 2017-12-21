@@ -142,7 +142,7 @@ class HomeVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
         // Dispose of any resources that can be recreated.
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: self.view.frame.width/3, height: self.view.frame.width/3)
+        let size = CGSize(width: 278, height: 278)
         return size
     }
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

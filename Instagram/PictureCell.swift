@@ -14,7 +14,6 @@ class PictureCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         let width = UIScreen.main.bounds.width
-        picImg.frame = CGRect(x: 0, y: 0, width: width/3, height: width/3)
+        picImg.frame = CGRect(x: 0, y: 0, width: 834/3, height: 834/3)
     }
-    
 }

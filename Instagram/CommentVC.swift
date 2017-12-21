@@ -86,7 +86,7 @@ class CommentVC: UIViewController,UITextViewDelegate,UITableViewDelegate,UITable
                         (object as AnyObject).deleteEventually()
                     }
                 }else{
-                    print(error?.localizedDescription)
+                    print("评论查询出错\(String(describing: error?.localizedDescription))")
                 }
             })
             //从表格视图删除单元格
@@ -169,7 +169,7 @@ class CommentVC: UIViewController,UITextViewDelegate,UITableViewDelegate,UITable
         if cell.usernameBtn.titleLabel?.text == AVUser.current()?.username{
             return [delete,address]
         }else if commentowner.last == AVUser.current()?.username{
-            return [delete,address]
+            return [complain,address]
         }else{
             return [address,complain]
         }

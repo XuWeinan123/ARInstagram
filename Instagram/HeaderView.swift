@@ -78,6 +78,7 @@ class HeaderView: UICollectionReusableView {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        /*
         //对齐
         let width = UIScreen.main.bounds.width
         //对头像进行布局
@@ -100,10 +101,12 @@ class HeaderView: UICollectionReusableView {
         //设置按钮的布局
         button.frame = CGRect(x:fullnameLbl.frame.origin.x,y:biobg.frame.origin.y+biobg.frame.height+20,width:biobg.frame.width,height:40)
         
-        biobg.layer.cornerRadius = 4
-        avaImg.layer.cornerRadius = avaImg.frame.width/2
-        button.layer.cornerRadius = 4
+
         
         line.frame = CGRect(x: 0, y: 317, width: width, height: 1)
+        */
+        biobg.layer.cornerRadius = 4
+        avaImg.layer.cornerRadius = 111
+        button.layer.cornerRadius = 4
     }
 }

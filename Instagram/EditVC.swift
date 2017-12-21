@@ -28,6 +28,9 @@ class EditVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIIma
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //调用布局方法
+        avaImg.layer.cornerRadius = avaImg.frame.width/2
+        avaImg.layer.masksToBounds = true
         //在视图中创建pickerview
         genderPicker = UIPickerView()
         genderPicker.dataSource = self
@@ -49,9 +52,7 @@ class EditVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIIma
         imgTap.numberOfTapsRequired = 1
         avaImg.isUserInteractionEnabled = true
         avaImg.addGestureRecognizer(imgTap)
-        
-        //调用布局方法
-        alignment()
+
         //调用信息载入方法
         infomation()
         // Do any additional setup after loading the view.
@@ -119,7 +120,6 @@ class EditVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UIIma
         scrollView.frame = CGRect(x: 0, y: 0, width: width, height: height)
         
         avaImg.frame = CGRect(x: width/2-72, y: 72, width: 144, height: 144)
-        avaImg.layer.cornerRadius = avaImg.frame.width/2
         avaImg.clipsToBounds = true
         usernameTxt.frame = CGRect(x: 32, y: avaImg.frame.origin.y + 48 + 144, width: width-64, height: 48)
         fullnameTxt.frame = CGRect(x: 32, y: usernameTxt.frame.origin.y+48, width: width-64, height: 48)

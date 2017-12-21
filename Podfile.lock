@@ -19,6 +19,7 @@ PODS:
   - AVOSCloudIM/_NOARC (7.3.2):
     - AVOSCloud (= 7.3.2)
   - EFColorPicker (1.0.0)
+  - lottie-ios (2.1.4)
   - SVProgressHUD (2.2.2)
 
 DEPENDENCIES:
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - AVOSCloudCrashReporting
   - AVOSCloudIM
   - EFColorPicker
+  - lottie-ios
   - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -33,8 +35,9 @@ SPEC CHECKSUMS:
   AVOSCloudCrashReporting: 12f4677508eac413f6c80f53bc7172b4210de1a8
   AVOSCloudIM: dc24560259042bb84dd318a31b71ca858fccb6fe
   EFColorPicker: b751df82a8aa79b0123750d569d0ed63cb2ccd91
+  lottie-ios: 94fa2d82547ce3adf1e61157653ba99999fd279f
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: 30b0d50c10e4e53cc122e64beef7e0bdb406602d
+PODFILE CHECKSUM: 05b731486a5209e779cc716e79a1d564c77b8786
 
 COCOAPODS: 1.3.1

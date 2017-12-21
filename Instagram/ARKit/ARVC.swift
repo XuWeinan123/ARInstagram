@@ -275,7 +275,9 @@ class ARVC: UIViewController, ARSCNViewDelegate,UIPopoverPresentationControllerD
             sendView.picImg.image = sceneView.snapshot().cropToSquare()
             sendView.titleTxt.text = ""
             popover.show(sendView!, point: CGPoint(x: 752, y: 144))
-            sendView?.titleTxt.becomeFirstResponder()
+            if online{
+                sendView?.titleTxt.becomeFirstResponder()
+            }
         }
     }
     @IBAction func cancelSnapshot(_ sender: UIButton) {
@@ -504,6 +506,9 @@ class ARVC: UIViewController, ARSCNViewDelegate,UIPopoverPresentationControllerD
             statusViewController.escalateFeedback(for: camera.trackingState, inSeconds: 3.0)
         case .normal:
             statusViewController.cancelScheduledMessage(for: .trackingStateEscalation)
+            if online{
+                cancelBtn.isHidden = false
+            }
         }
     }
     func session(_ session: ARSession, didFailWithError error: Error) {

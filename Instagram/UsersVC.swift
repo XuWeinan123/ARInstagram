@@ -168,7 +168,7 @@ class UsersVC: UITableViewController,UISearchBarDelegate,UICollectionViewDelegat
         let layout = UICollectionViewFlowLayout()
         
         //定义item的尺寸
-        layout.itemSize = CGSize(width: self.view.frame.width/3, height: self.view.frame.width/3)
+        layout.itemSize = CGSize(width: 278, height: 278)
         
         //设置滚动方向
         layout.scrollDirection = .vertical

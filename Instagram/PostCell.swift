@@ -8,6 +8,7 @@
 
 import UIKit
 import AVOSCloud
+import Lottie
 
 class PostCell: UITableViewCell {
 
@@ -122,16 +123,10 @@ class PostCell: UITableViewCell {
 
     @objc func likeTapped(){
         //创建一个大的灰色桃心
-        let likePic = UIImageView(image:UIImage(named:"like"))
-        likePic.frame.size.width = picImg.frame.width/1.5
-        likePic.frame.size.height = picImg.frame.height/1.5
-        likePic.center = picImg.center
-        likePic.alpha = 0.8
-        self.addSubview(likePic)
-        UIView.animate(withDuration: 0.4) {
-            likePic.alpha = 0
-            likePic.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        }
+        let lottieView = LOTAnimationView(name: "likeTapAni1")
+        lottieView.center = picImg.center
+        self.addSubview(lottieView)
+        lottieView.play()
         
         let title = likeBtn.title(for: .normal)
         

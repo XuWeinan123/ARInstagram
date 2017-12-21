@@ -151,7 +151,6 @@ class FeedVC: UITableViewController {
         let save = UIAlertAction(title: "保存图片", style: .default) { (UIAlertAction) in
             UIImageWriteToSavedPhotosAlbum(cell.picImg.image!, self, #selector(self.didSaveImageToAlbum(image:didFinishSavingWithError:contextInfo:)), nil)
         }
-        
         //4.创建菜单控制器
         let menu = UIAlertController(title: "菜单选项", message: nil, preferredStyle: .actionSheet)
         

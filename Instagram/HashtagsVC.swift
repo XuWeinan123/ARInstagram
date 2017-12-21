@@ -30,6 +30,8 @@ class HashtagsVC: UICollectionViewController {
         let backBtn = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(back(_:)))
         self.navigationItem.leftBarButtonItem = backBtn
         
+        loadHashtags()
+        
         //实现右滑返回
         let backSwipe = UISwipeGestureRecognizer(target: self, action: #selector(back(_:)))
         self.view.addGestureRecognizer(backSwipe)
@@ -41,15 +43,13 @@ class HashtagsVC: UICollectionViewController {
     }
     //loadHashtags
     func loadHashtags(){
-    
-        
         //获取相关帖子
         let hashtagQuery = AVQuery(className: "Hashtags")
         hashtagQuery.whereKey("hashtag", equalTo: hashtag.last!)
         hashtagQuery.findObjectsInBackground { (objects:[Any]?, error:Error?) in
             if error == nil {
                 self.filterArray.removeAll(keepingCapacity: false)
-                
+                print("hashtag查询到\(objects?.count)个数据")
                 for object in objects!{
                     self.filterArray.append((object as AnyObject).value(forKey: "to") as! String)
                 }
@@ -73,11 +73,11 @@ class HashtagsVC: UICollectionViewController {
                         self.collectionView?.reloadData()
                         self.refresher.endRefreshing()
                     }else{
-                        print(error?.localizedDescription)
+                        print("hashtagQuery出现错误1:\(error?.localizedDescription)")
                     }
                 })
             }else{
-                print(error?.localizedDescription)
+                print("hashtagQuery出现错误2:\(error?.localizedDescription)")
             }
         }
     }
@@ -136,6 +136,7 @@ class HashtagsVC: UICollectionViewController {
         }
     }
     @objc func refresh(){
+        loadHashtags()
         self.collectionView?.reloadData()
         self.refresher.endRefreshing()
     }
@@ -146,7 +147,7 @@ class HashtagsVC: UICollectionViewController {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: self.view.frame.width/3, height: self.view.frame.width/3)
+        let size = CGSize(width: 278, height: 278)
         return size
     }
 
