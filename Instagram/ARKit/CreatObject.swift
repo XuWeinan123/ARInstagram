@@ -10,8 +10,6 @@ import SceneKit
 import ARKit
 
 class CreatObject: SCNNode{
-    ///用来记录造物的名称
-    var objectName:String = ""
     ///用来保存造物的最近距离
     private var recentCreatObjectDistances = [Float]()
 

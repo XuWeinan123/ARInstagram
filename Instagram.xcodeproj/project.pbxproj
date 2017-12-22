@@ -185,35 +185,16 @@
 				E1C3AAD31FDE77FA002405F3 /* UnSort */,
 				E105A21B1FA3191C0064F0FF /* Info.plist */,
 				E1C3AAC91FDE546E002405F3 /* Popover.swift */,
-				E133696E1FD0FD7E008A555D /* ARKit */,
 				E105A20F1FA3191C0064F0FF /* AppDelegate.swift */,
 				E105A2131FA3191C0064F0FF /* Main.storyboard */,
 				E105A2161FA3191C0064F0FF /* Assets.xcassets */,
 				E105A2181FA3191C0064F0FF /* LaunchScreen.storyboard */,
-				E1D7205C1FA3204E00F0297A /* SignInVC.swift */,
-				E1D7205E1FA3208500F0297A /* SignUpVC.swift */,
-				E1D720601FA3209E00F0297A /* ResetPasswordVC.swift */,
-				E1118C091FAAC0F10016AA23 /* HomeVC.swift */,
+				E133696E1FD0FD7E008A555D /* ARKit */,
+				E136476B1FECB27B002A6FE5 /* ViewController */,
+				E136476C1FECB2C0002A6FE5 /* Cell */,
 				E1118C0D1FAAC1B40016AA23 /* HeaderView.swift */,
-				E1EC8C8C1FAAC669005660F5 /* PictureCell.swift */,
-				E1EF86561FAC268A0056F43F /* FollowersVC.swift */,
-				E1EF86581FAC26AA0056F43F /* FollowersCell.swift */,
-				E1EF865A1FACA85B0056F43F /* GuestVC.swift */,
-				E17137741FAD879800A858E0 /* EditVC.swift */,
-				E1EA3DB41FAE06EA00C65976 /* UploadVC.swift */,
 				E1C3AACF1FDE6354002405F3 /* UploadView.swift */,
 				E1C3AAD11FDE63E8002405F3 /* UploadView.xib */,
-				E1EA3DB61FAEBB2200C65976 /* PostVC.swift */,
-				E1EA3DBA1FAEBBA100C65976 /* PostCell.swift */,
-				E1033CBE1FAF075B00DE6ABD /* NavVC.swift */,
-				E1033CC01FAF077E00DE6ABD /* TabBarVC.swift */,
-				E1015CFE1FAF3BC10091E847 /* CommentVC.swift */,
-				E1015D001FAF3BE70091E847 /* CommentCell.swift */,
-				E1F024141FB1696E00171DA1 /* HashtagsVC.swift */,
-				E1F024161FB18FAB00171DA1 /* FeedVC.swift */,
-				E17D8CA91FB28DA6002689D5 /* UsersVC.swift */,
-				E1B315FE1FB2BB580077887E /* NewsVC.swift */,
-				E1B316001FB2BB6A0077887E /* NewsCell.swift */,
 				E166D2C81FA9A449004D5D4A /* Instagram-Bridging-Header.h */,
 			);
 			path = Instagram;
@@ -247,6 +228,41 @@
 				E13369881FD103B9008A555D /* FocusSquareSegment.swift */,
 			);
 			name = FocusSquare;
+			sourceTree = "<group>";
+		};
+		E136476B1FECB27B002A6FE5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E1033CBE1FAF075B00DE6ABD /* NavVC.swift */,
+				E1D7205C1FA3204E00F0297A /* SignInVC.swift */,
+				E1D7205E1FA3208500F0297A /* SignUpVC.swift */,
+				E1D720601FA3209E00F0297A /* ResetPasswordVC.swift */,
+				E1118C091FAAC0F10016AA23 /* HomeVC.swift */,
+				E1EF86561FAC268A0056F43F /* FollowersVC.swift */,
+				E1EF865A1FACA85B0056F43F /* GuestVC.swift */,
+				E17137741FAD879800A858E0 /* EditVC.swift */,
+				E1EA3DB41FAE06EA00C65976 /* UploadVC.swift */,
+				E1EA3DB61FAEBB2200C65976 /* PostVC.swift */,
+				E1033CC01FAF077E00DE6ABD /* TabBarVC.swift */,
+				E1015CFE1FAF3BC10091E847 /* CommentVC.swift */,
+				E1F024141FB1696E00171DA1 /* HashtagsVC.swift */,
+				E1F024161FB18FAB00171DA1 /* FeedVC.swift */,
+				E17D8CA91FB28DA6002689D5 /* UsersVC.swift */,
+				E1B315FE1FB2BB580077887E /* NewsVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E136476C1FECB2C0002A6FE5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E1EC8C8C1FAAC669005660F5 /* PictureCell.swift */,
+				E1EF86581FAC26AA0056F43F /* FollowersCell.swift */,
+				E1EA3DBA1FAEBBA100C65976 /* PostCell.swift */,
+				E1015D001FAF3BE70091E847 /* CommentCell.swift */,
+				E1B316001FB2BB6A0077887E /* NewsCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E1C3AAD31FDE77FA002405F3 /* UnSort */ = {
