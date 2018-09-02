@@ -53,22 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let myTabBar = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
             window?.rootViewController = myTabBar
-            /*
-            
-            AVUser.current()?.follow("59fb3360ee920a004592f5af", andCallback: {(success:Bool,error:Error?) in
-                if success{
-                    print("\(username!)成功")
-                }else{
-                    print("\(username!)失败")
-                }
-            })
-            AVUser.current()?.follow("59fb33faee920a004592f985", andCallback: {(success:Bool,error:Error?) in
-                if success{
-                    print("\(username!)成功")
-                }else{
-                    print("\(username!)失败")
-                }
-            })*/
         }
     }
     func offline(){

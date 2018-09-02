@@ -59,6 +59,12 @@ class ARVC: UIViewController, ARSCNViewDelegate,UIPopoverPresentationControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let names = UIFont.familyNames
+        for i in 0..<names.count{
+            print("字体\(i)：\(names[i])")
+        }
+        
         aligment()//设置UI细节
         //初始化弹框
         initSendView()
